@@ -1,9 +1,10 @@
-import React from "react";
-
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-interface CounterTextProps {
-  inputColor: string
-}
+import CounterPanel from "../CounterPanel";
+import { PENDING_GUESS, LOGO_URL } from "../constants";
+import ApiService from "../utils";
+import { StateType } from "../interfaces";
+
 const GameContainer = styled.div`
   padding: 20px;
   margin: 0 auto;
@@ -12,35 +13,24 @@ const GameContainer = styled.div`
   flex-direction: column;
  
 `;
-const CounterPanelContainer = styled.div`
-  background-color: aqua;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-evenly;
-
-`;
-const CounterText = styled.p<CounterTextProps>`
-  color:${props => props.inputColor};
-`;
 const GlobalHeader = styled.div`
   padding-bottom: 19px;
   text-align: center;
 `;
 const TopLogoImage = styled.img.attrs({
-  src: 'https://s3.amazonaws.com/cdn.fanduel.com/images/2019/Homepage/Home/fd-shield-logo.svg'
+  src: LOGO_URL
 })`
 height: 28px;
 `;
 const TopLogoLink = styled.a``;
 const HeaderContainer = styled.div`
   align-items: center;
-  margin: 0 5px 5px 0;
-  padding: 5px;
   background: radial-gradient(ellipse, #0facfd 16%, #1493ff 100%);
   color: #ffff;
   height: 100px;
   justify-content: center;  
+  margin: 0 5px 5px 0;
+  padding: 5px;
   border-radius: 16px;
 `;
 const HeaderText = styled.p`
@@ -56,14 +46,18 @@ const BottomContainer = styled.div`
   background: radial-gradient(ellipse, #0facfd 16%, #1493ff 100%);
   justify-content: center;
   align-items: center;
-  margin-bottom: 30px;
+  margin: 0 5px 5px 0;
+  border-radius: 16px;
+  padding: 5px;
 `;
 const RestartButtonContainer = styled.div`
   flex-direction: column;
   background-color: #1493ff;
   justify-content: center;
   align-items: center;
-  margin-bottom: 30px;
+  margin: 0 5px 5px 0;
+  padding: 5px;
+  border-radius: 16px;
 `;
 const ContinueButtonContainer = styled.button`
   background-color: #fff;
@@ -84,16 +78,29 @@ color: #1493ff;
 background: #fff;
 `;
 
-function Game() {
-  let counterScore = [];
+const Game: React.FC = () =>  {
+  const initialState = {
+    score: 0,
+    showResult: false,
+    gameOver: false,
+    players: [],
+    playersRaw: [],
+    guessRight: PENDING_GUESS
+  };
 
-  for (let i = 1; i <= 10; i++) {
+  const [state, setState] = useState<StateType>(initialState);
+  const loadPlayers = async (): Promise<void> => {
+    if (state.playersRaw.length === 0) {
+      const players = await ApiService.getPlayers();
+      setState({
+        ...state,
+        players: players,
+        playersRaw: players
+      });
+    }
+  };
 
-    counterScore.push(
-      // @ts-ignore
-      <CounterText key={i} inputColor={"black"}>{i}</CounterText>
-    )
-  }
+  useEffect(() => { loadPlayers() });
   return (
     <GameContainer>
       <GlobalHeader>
@@ -104,9 +111,7 @@ function Game() {
       <HeaderContainer>
         <HeaderText>Select the player with the higher FanDuel Points Per Game (FPPG). </HeaderText>
       </HeaderContainer>
-      <CounterPanelContainer>
-        {counterScore}
-      </CounterPanelContainer>
+      <CounterPanel score={2}/>
       <BottomContainer>
         <BottomText>{"Well done! "}</BottomText>
         <ContinueButtonContainer onClick={() => {}}>
@@ -120,5 +125,5 @@ function Game() {
       </RestartButtonContainer>
     </GameContainer>
   );
-}
+};
 export default Game;
