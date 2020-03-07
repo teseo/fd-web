@@ -2,12 +2,13 @@ import styled from "styled-components";
 import { CounterTextProps } from "../../interfaces";
 
 export const CounterPanelContainer = styled.div`
-  background-color: aqua;
+  background: radial-gradient(ellipse, #0facfd 16%, #1493ff 100%);
   display: flex;
+  padding-top: 5px;
+  padding-bottom: 5px;
   flex-direction: row;
   align-items: center;
   justify-content: space-evenly;  
-  margin: 0 5px 5px 0;
   border-radius: 16px;
 
 `;

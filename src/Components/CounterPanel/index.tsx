@@ -8,7 +8,7 @@ const counterScore = (score: number) => {
   for (let i = 1; i <= 10; i++) {
 
     counterScore.push(
-      <CounterText key={i} inputColor={i <= score ? "black" : "grey"}>{i}</CounterText>
+      <CounterText key={i} inputColor={i <= score ? "black" : "yellow"}>{i}</CounterText>
     )
   }
   return counterScore;

@@ -23,11 +23,13 @@ export const WinnerImage = styled.img.attrs({
   src: WinnerImageSrc
 })`
 height: 192px;
+margin-top: 5px;
 `;
 export const TryAgainImage = styled.img.attrs({
   src: TryAgainSrc
 })`
 height: 192px;
+margin-top: 5px;
 `;
 export const TopLogoLink = styled.a``;
 export const HeaderContainer = styled.div`
