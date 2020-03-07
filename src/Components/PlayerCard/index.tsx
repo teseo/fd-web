@@ -4,17 +4,20 @@ import { PlayerProps } from "../interfaces";
 
 const PlayerCardContainer = styled.div`
   background-color: forestgreen;
+  display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
     margin: 5px 10px 5px 10px;
-
 `;
 const PlayerDataContainer = styled.button`
-  background-color: paleturquoise;
+  background-color: #99a8b1;
+  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
+    height: 182px;
+
 `;
 
 const TextName = styled.p``;
