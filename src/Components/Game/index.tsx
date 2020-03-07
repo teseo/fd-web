@@ -49,7 +49,6 @@ const HeaderText = styled.p`
   justify-content: center;
   align-items: center;
 `;
-
 const BottomContainer = styled.div`
   flex-direction: column;
   background: radial-gradient(ellipse, #0facfd 16%, #1493ff 100%);
@@ -57,7 +56,6 @@ const BottomContainer = styled.div`
   align-items: center;
   margin-bottom: 30px;
 `;
-
 const RestartButtonContainer = styled.div`
   flex-direction: column;
   background-color: #1493ff;
@@ -65,8 +63,6 @@ const RestartButtonContainer = styled.div`
   align-items: center;
   margin-bottom: 30px;
 `;
-
-
 const ContinueButtonContainer = styled.button`
   background-color: #fff;
   flex-direction: column;
@@ -77,7 +73,6 @@ const ContinueButtonContainer = styled.button`
   margin-bottom: 5px;
   font-size: medium;
 `;
-
 const BottomText = styled.p`
 color: #ffff;
 margin-bottom: 5px;
@@ -87,44 +82,41 @@ color: #1493ff;
 background: #fff;
 `;
 
-export default class Game extends React.Component<{}, {}> {
+function Game() {
+  let counterScore = [];
 
-  render() {
-    let counterScore = [];
+  for (let i = 1; i <= 10; i++) {
 
-    for (let i = 1; i <= 10; i++) {
-
-      counterScore.push(
-        // @ts-ignore
-        <CounterText key={i} inputColor={"black"}>{i}</CounterText>
-      )
-    }
-    return (
-      <GameContainer>
-        <GlobalHeader>
-          <TopLogoLink href="/" target="_self" >
-            <TopLogoImage />
-          </TopLogoLink>
-        </GlobalHeader>
-        <HeaderContainer>
-          <HeaderText>Select the player with the higher FanDuel Points Per Game (FPPG). </HeaderText>
-        </HeaderContainer>
-        <CounterPanelContainer>
-          {counterScore}
-        </CounterPanelContainer>
-        <BottomContainer>
-            <BottomText>{"Well done! "}</BottomText>
-            <ContinueButtonContainer onClick={() => {}}>
-                <ButtonText>Continue</ButtonText>
-            </ContinueButtonContainer>
-        </BottomContainer>
-        <RestartButtonContainer>
-            <ContinueButtonContainer onClick={() => {}}>
-                <ButtonText>Restart Game</ButtonText>
-            </ContinueButtonContainer>
-        </RestartButtonContainer>
-      </GameContainer>
-    );
-
+    counterScore.push(
+      // @ts-ignore
+      <CounterText key={i} inputColor={"black"}>{i}</CounterText>
+    )
   }
+  return (
+    <GameContainer>
+      <GlobalHeader>
+        <TopLogoLink href="/" target="_self" >
+          <TopLogoImage />
+        </TopLogoLink>
+      </GlobalHeader>
+      <HeaderContainer>
+        <HeaderText>Select the player with the higher FanDuel Points Per Game (FPPG). </HeaderText>
+      </HeaderContainer>
+      <CounterPanelContainer>
+        {counterScore}
+      </CounterPanelContainer>
+      <BottomContainer>
+        <BottomText>{"Well done! "}</BottomText>
+        <ContinueButtonContainer onClick={() => {}}>
+          <ButtonText>Continue</ButtonText>
+        </ContinueButtonContainer>
+      </BottomContainer>
+      <RestartButtonContainer>
+        <ContinueButtonContainer onClick={() => {}}>
+          <ButtonText>Restart Game</ButtonText>
+        </ContinueButtonContainer>
+      </RestartButtonContainer>
+    </GameContainer>
+  );
 }
+export default Game;
