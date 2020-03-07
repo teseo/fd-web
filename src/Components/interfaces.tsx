@@ -49,3 +49,12 @@ export interface StateType {
 export interface CounterTextProps {
   inputColor: string
 }
+
+export interface PlayerProps {
+  imageSource: any;
+  firstName: string;
+  lastName: string;
+  ffpg: number;
+  handlePlayerClick: () => void;
+  showResult: boolean;
+}
