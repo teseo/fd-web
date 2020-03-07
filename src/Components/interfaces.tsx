@@ -58,3 +58,7 @@ export interface PlayerProps {
   handlePlayerClick: () => void;
   showResult: boolean;
 }
+
+export interface CounterProps {
+  score: number;
+}
