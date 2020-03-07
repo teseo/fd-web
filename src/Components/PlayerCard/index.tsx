@@ -1,30 +1,11 @@
 import React from "react";
-import styled from "styled-components";
 import { PlayerProps } from "../interfaces";
-
-const PlayerCardContainer = styled.div`
-  background-color: forestgreen;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-    margin: 5px 10px 5px 10px;
-`;
-const PlayerDataContainer = styled.button`
-  background-color: #99a8b1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-    height: 182px;
-
-`;
-
-const TextName = styled.p``;
-const PlayerImage = styled.img`
-  width: 150px;
-  height: 150px;
-`;
+import {
+  PlayerCardContainer,
+  PlayerDataContainer,
+  PlayerImage,
+  TextName
+} from "./StyledComponents";
 
 const PlayerCard: React.FC<PlayerProps> =(props) =>  {
     const {firstName, lastName, ffpg, showResult, handlePlayerClick, imageSource } = props;
