@@ -6,6 +6,8 @@ interface CounterTextProps {
 }
 const GameContainer = styled.div`
   padding: 20px;
+  margin: 0 auto;
+  max-width: 1441px;
   background-color: #152a47;
   flex-direction: column;
  
@@ -28,8 +30,8 @@ const GlobalHeader = styled.div`
 const TopLogoImage = styled.img.attrs({
   src: 'https://s3.amazonaws.com/cdn.fanduel.com/images/2019/Homepage/Home/fd-shield-logo.svg'
 })`
-height: 66px;
-`
+height: 28px;
+`;
 const TopLogoLink = styled.a``;
 const HeaderContainer = styled.div`
   align-items: center;
