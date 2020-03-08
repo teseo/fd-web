@@ -25,6 +25,8 @@ describe("Game", () => {
     });
   });
   it("displays error in the api call", async () => {
+    // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+    // @ts-ignore
     axios.get = jest.fn(() => Promise.resolve({ data: { players: [] } }));
     const { getByText } = render(<Game />);
     await wait(() => expect(getByText("Error Loading Players")).toBeTruthy());
@@ -152,6 +154,8 @@ describe("Game", () => {
     });
   });
   it("Simulate a whole game where player lose", async () => {
+    // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+    // @ts-ignore
     axios.get = jest.fn(() => Promise.resolve({ data: { players: tenPlayers } }));
     await act(async () => {
       const { getAllByText, getByText, getByAltText } = render(<Game />);
