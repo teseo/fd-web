@@ -1,5 +1,6 @@
 {
   "name": "fanduel",
+  "homepage": "https://teseo.github.io/fanduel/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -14,6 +15,8 @@
     "typescript": "^3.7.5"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "lint": "tsc --noEmit && eslint '*/**/*.{js,ts,tsx}' --quiet --fix",
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -52,6 +55,7 @@
     "eslint-config-prettier": "^6.10.0",
     "eslint-plugin-prettier": "^3.1.2",
     "eslint-plugin-react": "^7.19.0",
+    "gh-pages": "^2.2.0",
     "prettier": "^1.19.1",
     "react-test-renderer": "^16.13.0",
     "ts-jest": "^25.2.1"

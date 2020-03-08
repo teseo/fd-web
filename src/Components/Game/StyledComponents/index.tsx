@@ -21,12 +21,14 @@ export const TopLogoImage = styled.img.attrs({
 `;
 export const WinnerImage = styled.img.attrs({
   src: WinnerImageSrc,
+  alt: "You won",
 })`
   height: 192px;
   margin-top: 5px;
 `;
 export const TryAgainImage = styled.img.attrs({
   src: TryAgainSrc,
+  alt: "Try again",
 })`
   height: 192px;
   margin-top: 5px;

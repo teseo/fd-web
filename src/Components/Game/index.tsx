@@ -166,7 +166,7 @@ const Game: React.FC = () => {
           )}
         </React.Fragment>
       )}
-      {state.gameOver && (
+      {(state.gameOver || state.players.length === 1) && (
         <RestartButtonContainer>
           <ContinueButtonContainer onClick={(): void => handleRestartGameClick()}>
             <ButtonText>Restart Game</ButtonText>
