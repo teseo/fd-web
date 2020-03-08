@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.js": "/fanduel/static/js/main.882ce7bb.chunk.js",
-    "main.js.map": "/fanduel/static/js/main.882ce7bb.chunk.js.map",
+    "main.js": "/fanduel/static/js/main.96667d22.chunk.js",
+    "main.js.map": "/fanduel/static/js/main.96667d22.chunk.js.map",
     "runtime-main.js": "/fanduel/static/js/runtime-main.ee1b8f87.js",
     "runtime-main.js.map": "/fanduel/static/js/runtime-main.ee1b8f87.js.map",
     "static/js/2.8216a574.chunk.js": "/fanduel/static/js/2.8216a574.chunk.js",
     "static/js/2.8216a574.chunk.js.map": "/fanduel/static/js/2.8216a574.chunk.js.map",
     "index.html": "/fanduel/index.html",
-    "precache-manifest.c89b11dccd7b4f4bbc2d1c6b29ae906f.js": "/fanduel/precache-manifest.c89b11dccd7b4f4bbc2d1c6b29ae906f.js",
+    "precache-manifest.25743333c17417050a3cad6159eabb8b.js": "/fanduel/precache-manifest.25743333c17417050a3cad6159eabb8b.js",
     "service-worker.js": "/fanduel/service-worker.js",
     "static/js/2.8216a574.chunk.js.LICENSE.txt": "/fanduel/static/js/2.8216a574.chunk.js.LICENSE.txt",
     "static/media/tryagain.jpg": "/fanduel/static/media/tryagain.0b7b3ea4.jpg",
@@ -16,6 +16,6 @@
   "entrypoints": [
     "static/js/runtime-main.ee1b8f87.js",
     "static/js/2.8216a574.chunk.js",
-    "static/js/main.882ce7bb.chunk.js"
+    "static/js/main.96667d22.chunk.js"
   ]
 }
