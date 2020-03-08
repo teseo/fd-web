@@ -42,6 +42,7 @@ export interface StateType {
   players: Array<Player>;
   playersRaw: Array<Player>;
   showResult: boolean;
+  queryPerformed: boolean;
   guessRight: number;
   gameOver: boolean;
 }

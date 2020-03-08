@@ -16,6 +16,6 @@ describe("<CounterPanel />", () => {
         .children()
         .at(5)
         .props(),
-    ).toEqual({ children: 6, inputColor: "grey" });
+    ).toEqual({ children: 6, inputColor: "yellow" });
   });
 });

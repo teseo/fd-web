@@ -13,6 +13,7 @@ import {
   GlobalHeader,
   HeaderContainer,
   HeaderText,
+  LoadingText,
   PlayersCardContainer,
   RestartButtonContainer,
   TopLogoImage,
@@ -25,6 +26,7 @@ const Game: React.FC = () => {
   const initialState = {
     score: 0,
     showResult: false,
+    queryPerformed: false,
     gameOver: false,
     players: [],
     playersRaw: [],
@@ -32,16 +34,6 @@ const Game: React.FC = () => {
   };
 
   const [state, setState] = useState<StateType>(initialState);
-  const loadPlayers = async (): Promise<void> => {
-    if (state.playersRaw.length === 0) {
-      const players = await ApiService.getPlayers();
-      setState({
-        ...state,
-        players: players,
-        playersRaw: players,
-      });
-    }
-  };
   const handlePlayerClick = (
     playersToPlay: Array<Player>,
     playerOne: Player,
@@ -69,11 +61,44 @@ const Game: React.FC = () => {
     });
   };
   const handleRestartGameClick = (): void => {
-    setState(initialState);
+    setState({
+      ...state,
+      score: 0,
+      showResult: false,
+      queryPerformed: true,
+      gameOver: false,
+      players: state.playersRaw,
+      guessRight: PENDING_GUESS,
+    });
   };
   useEffect(() => {
-    loadPlayers();
-  });
+    // Basic implementation to handle race conditions
+    // When component might unmount before API call finishes
+    let isStopped = false;
+    if (!isStopped) {
+      const loadPlayers = async (): Promise<void> => {
+        try {
+          const players = await ApiService.getPlayers();
+          if (!isStopped && players) {
+            setState({
+              ...state,
+              queryPerformed: true,
+              players: players,
+              playersRaw: players,
+            });
+          }
+        } catch (error) {
+          console.error(error);
+        }
+      };
+      loadPlayers();
+    }
+    return () => {
+      isStopped = true;
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   const playersToPlay = state.players.slice();
   const score = state.score;
   const playerOne = playersToPlay.shift();
@@ -90,6 +115,12 @@ const Game: React.FC = () => {
       </HeaderContainer>
       <CounterPanel score={state.score} />
       <PlayersCardContainer>
+        {state.players.length === 0 &&
+          (state.queryPerformed ? (
+            <LoadingText>Error Loading Players</LoadingText>
+          ) : (
+            <LoadingText>Loading Players...</LoadingText>
+          ))}
         {score < MAX_SCORE && playerOne && playerTwo && (
           <PlayerCard
             firstName={playerOne.first_name}

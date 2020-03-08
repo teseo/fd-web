@@ -48,6 +48,11 @@ export const HeaderText = styled.span`
   justify-content: center;
   align-items: center;
 `;
+export const LoadingText = styled.span`
+  margin: 5px 5px 0 5px;
+  font-size: 18px;
+  color: aliceblue;
+`;
 export const BottomContainer = styled.div`
   display: flex;
   height: 25px;
