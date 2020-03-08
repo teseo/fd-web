@@ -8,10 +8,9 @@ export const CounterPanelContainer = styled.div`
   padding-bottom: 5px;
   flex-direction: row;
   align-items: center;
-  justify-content: space-evenly;  
+  justify-content: space-evenly;
   border-radius: 16px;
-
 `;
 export const CounterText = styled.p<CounterTextProps>`
-  color:${props => props.inputColor};
+  color: ${(props): string => props.inputColor};
 `;

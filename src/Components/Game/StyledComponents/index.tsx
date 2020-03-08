@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {LOGO_URL} from "../../constants";
+import { LOGO_URL } from "../../constants";
 import WinnerImageSrc from "../../../assets/winner.jpg";
 import TryAgainSrc from "../../../assets/tryagain.jpg";
 
@@ -15,28 +15,28 @@ export const GlobalHeader = styled.div`
   text-align: center;
 `;
 export const TopLogoImage = styled.img.attrs({
-  src: LOGO_URL
+  src: LOGO_URL,
 })`
-height: 28px;
+  height: 28px;
 `;
 export const WinnerImage = styled.img.attrs({
-  src: WinnerImageSrc
+  src: WinnerImageSrc,
 })`
-height: 192px;
-margin-top: 5px;
+  height: 192px;
+  margin-top: 5px;
 `;
 export const TryAgainImage = styled.img.attrs({
-  src: TryAgainSrc
+  src: TryAgainSrc,
 })`
-height: 192px;
-margin-top: 5px;
+  height: 192px;
+  margin-top: 5px;
 `;
 export const TopLogoLink = styled.a``;
 export const HeaderContainer = styled.div`
   align-items: center;
   background: radial-gradient(ellipse, #0facfd 16%, #1493ff 100%);
   color: #ffff;
-  justify-content: center;  
+  justify-content: center;
   margin: 0 5px 5px 0;
   padding: 5px;
   border-radius: 16px;
@@ -59,7 +59,7 @@ export const BottomContainer = styled.div`
   padding: 5px;
 `;
 export const RestartButtonContainer = styled.div`
-display: flex;
+  display: flex;
   flex-direction: column;
   background-color: #1493ff;
   justify-content: center;
@@ -78,11 +78,11 @@ export const ContinueButtonContainer = styled.button`
   margin-left: 5px;
 `;
 export const BottomText = styled.p`
-color: #ffff;
+  color: #ffff;
 `;
 export const ButtonText = styled.p`
-color: #1493ff;
-background: #fff;
+  color: #1493ff;
+  background: #fff;
 `;
 export const PlayersCardContainer = styled.div`
   display: flex;

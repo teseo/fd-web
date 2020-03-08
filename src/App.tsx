@@ -1,5 +1,5 @@
-import React from 'react';
-import Game from './Components/Game'
+import React from "react";
+import Game from "./Components/Game";
 import { createGlobalStyle } from "styled-components";
 
 const Style = createGlobalStyle`
@@ -19,14 +19,13 @@ const Style = createGlobalStyle`
     overflow-y: auto;
   }
 `;
-
-function App() {
+const App: React.FC<{}> = () => {
   return (
     <React.Fragment>
       <Style />
       <Game />
     </React.Fragment>
   );
-}
+};
 
 export default App;

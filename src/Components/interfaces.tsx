@@ -1,4 +1,3 @@
-
 export interface DefaultImageData {
   height: number;
   url: string;
@@ -15,7 +14,7 @@ export interface News {
 }
 
 export interface ImageData {
-  default: DefaultImageData
+  default: DefaultImageData;
 }
 
 export interface Player {
@@ -23,7 +22,7 @@ export interface Player {
   fixture: Fixture;
   fppg: number;
   id: string;
-  images: ImageData
+  images: ImageData;
   injured: boolean;
   injury_details: string;
   injury_status: string;
@@ -34,6 +33,7 @@ export interface Player {
   position: string;
   removed: boolean;
   salary: number;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   starting_order: any;
   team: Fixture;
 }
@@ -47,10 +47,11 @@ export interface StateType {
 }
 
 export interface CounterTextProps {
-  inputColor: string
+  inputColor: string;
 }
 
 export interface PlayerProps {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   imageSource: any;
   firstName: string;
   lastName: string;

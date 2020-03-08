@@ -6,7 +6,7 @@ export const PlayerCardContainer = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
-    margin: 5px 10px 5px 10px;
+  margin: 5px 10px 5px 10px;
 `;
 export const PlayerDataContainer = styled.button`
   background-color: #99a8b1;
@@ -14,8 +14,7 @@ export const PlayerDataContainer = styled.button`
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-    height: 182px;
-
+  height: 182px;
 `;
 
 export const TextName = styled.p``;
