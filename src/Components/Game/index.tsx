@@ -114,7 +114,6 @@ const Game: React.FC = () => {
             }
           />
         )}
-        {/* eslint-disable-next-line no-mixed-operators */}
         {!playerOne || (!playerTwo && <TryAgainImage />)}
         {score === MAX_SCORE && <WinnerImage />}
       </PlayersCardContainer>
