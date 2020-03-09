@@ -1,6 +1,6 @@
 import React from "react";
 import { PlayerProps } from "../interfaces";
-import { PlayerCardContainer, PlayerDataContainer, PlayerImage, TextName } from "./StyledComponents";
+import { PlayerDataContainer, PlayerImage, TextName } from "./StyledComponents";
 
 const PlayerCard: React.FC<PlayerProps> = props => {
   const { firstName, lastName, ffpg, showResult, handlePlayerClick, imageSource } = props;
