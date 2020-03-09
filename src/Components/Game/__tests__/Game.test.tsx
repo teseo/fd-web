@@ -68,7 +68,7 @@ describe("Game", () => {
       expect(queryByText("Well done!")).not.toBeInTheDocument();
       fireEvent.click(getByText("Continue"));
       //Round 2
-      expect(queryByText("Well done!")).not.toBeInTheDocument();
+      expect(queryByText("You missed this one!")).not.toBeInTheDocument();
       expect(getByText("Name: Hassan Whiteside")).toBeTruthy();
     });
   });
