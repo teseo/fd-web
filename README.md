@@ -1,6 +1,3 @@
-### Live demo
-A live demo of the challenge can be found on http://teseo.github.io/fanduel
-
 ### Stack
 - Typescript
 - Axios
