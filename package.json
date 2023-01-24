@@ -10,7 +10,7 @@
     "jest-enzyme": "^7.1.2",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
-    "react-scripts": "3.4.0",
+    "react-scripts": "3.4.4",
     "styled-components": "^5.0.1",
     "typescript": "^3.7.5"
   },
@@ -58,6 +58,6 @@
     "gh-pages": "^2.2.0",
     "prettier": "^1.19.1",
     "react-test-renderer": "^16.13.0",
-    "ts-jest": "^25.2.1"
+    "ts-jest": "^25.5.1"
   }
 }
